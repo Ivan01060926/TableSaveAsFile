@@ -3,6 +3,7 @@ from bs4 import BeautifulSoup
 import pandas as pd
 from flask import Flask, render_template, request, send_file, session
 import io
+import os
 
 
 def Get_Info(searchStr):
@@ -91,6 +92,6 @@ def download_excel():
                      mimetype='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
                      )
 
-
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', debug=True)
+    port = int(os.environ.get("PORT", 5000))  # 預設埠為 5000
+    app.run(host='0.0.0.0', port=port, debug=True)
