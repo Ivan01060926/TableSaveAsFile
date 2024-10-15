@@ -16,8 +16,6 @@ def Get_Info(searchStr):
     }
 
     r = requests.get(url, headers=headers)
-    # r.encoding = ('utf-8')
-    # print(r.text)
 
     soup = BeautifulSoup(r.text, 'lxml')
 
@@ -38,34 +36,13 @@ def Get_Info(searchStr):
             else:
                 price = ele.select('ul.price.clearfix li b')[0].contents
             arr = [getTitle, author, price, promotion]
-            # print(f'書名:{getTitle}, 作者:{author}, 價格:{price}, 折扣:{promotion}')
 
         ele_arr.append(arr)
     return pd.DataFrame(ele_arr)
 
-# df = pd.DataFrame(ele_arr)
-# print(df)
-
-# df.to_excel(f'book.xlsx',
-#             sheet_name='Sheet1',
-#             header=False,
-#             index=False,
-#             )
-
-# with pd.ExcelWriter('book.xlsx',
-#                     mode='a') as writer:
-#     df.to_excel(writer,
-#                 sheet_name=searchBox,
-#                 header=False,
-#                 index=False
-#                 )
-
-
 app = Flask(__name__)
 
 app.secret_key = 'your_secret_key_here'
-# tempArr = Get_Info('九把刀')
-
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
