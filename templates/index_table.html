@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>數據表格</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body>
+    <form action="" method="POST">
+      <input type="text" name="searchStr" id="" />
+      <button type="submit">送出</button>
+    </form>
+    <br />
+    <a href="/download">Download Excel</a>
+    <br />
+    <br />
+    <div>{{ data|safe }}</div>
+  </body>
+</html>

@@ -1,0 +1,27 @@
+body {
+    background-color: black; /* 设置页面背景为黑色 */
+    color: white; /* 设置默认文字颜色为白色 */
+}
+
+table {
+    border-collapse: collapse; /* 使边框合并 */
+    width: 50%; /* 设置表格宽度为 100% */
+}
+
+td, th{
+    color: white; /* 设置表格单元格中的文字颜色为白色 */
+    border: 2px solid rgb(0, 0, 0); /* 设置边框颜色 */
+    padding: 8px; /* 设置内边距 */
+    font-weight: bold; /* 设置字体为加粗 */
+}
+
+th {
+    background-color: rgb(50, 50, 50); /* 设置表头背景颜色 */
+}
+
+a {
+    color: red; /* 设置表格单元格中的文字颜色为白色 */
+    border: 2px solid rgb(0, 0, 0); /* 设置边框颜色 */
+    padding: 8px; /* 设置内边距 */
+    font-weight: bold; /* 设置字体为加粗 */
+}

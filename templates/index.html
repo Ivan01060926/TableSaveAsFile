@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>數據表格</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body>
+    <form action="" method="POST">
+      <input type="text" name="searchStr" id="" />
+      <button type="submit">送出</button>
+    </form>
+    <br />
+    <a href="/download">Download Excel</a>
+    <br />
+    <br />
+    <table>
+      <thead>
+        <tr>
+          {% for header in data[0] %}
+          <th>{{ header }}</th>
+          {% endfor %}
+        </tr>
+      </thead>
+      <tbody>
+        {% for row in data[1:] %}
+        <tr>
+          {% for cell in row %}
+          <td>{{ cell }}</td>
+          {% endfor %}
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </body>
+</html>
