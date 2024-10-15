@@ -13,6 +13,7 @@ td, th{
     border: 2px solid rgb(0, 0, 0); /* 设置边框颜色 */
     padding: 8px; /* 设置内边距 */
     font-weight: bold; /* 设置字体为加粗 */
+    border-color: gray;
 }
 
 th {
